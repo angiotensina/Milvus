@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  attu:
+    image: zilliz/attu:dev
+    container_name: attu_container
+    network_mode: host
+    environment:
+      - ATTU_LOG_LEVEL=info
+      - SERVER_NAME=your_server_name
+      - SERVER_PORT=8080
+      - MILVUS_URL=http://localhost:19530
+    volumes:
+      - /your-tls-file-path:/app/tls
